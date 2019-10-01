@@ -1,0 +1,55 @@
+<h1 class="text-info text-center">Look up the Fastest Ship</h1>
+
+<label for="example-number-input" class="text row-form-label">
+    Type number of Passengers:
+   </label>
+<form #templateVariableName="ngForm" class="mb-3">
+    <div class="row">
+        <div class="col">
+            <div class="input-group">
+                <input class="form-control" [(ngModel)]="countPassenger" #passengers name="passengers" type="number" min="0">
+                <span class="input-group-btn">
+              <button class="btn btn-secondary" (click)="getfastShip(countPassenger)" type="button">Search Ship</button>
+            </span>
+            </div>
+        </div>
+    </div>
+</form>
+
+<table *ngIf="ship" class="table table-striped">
+    <thead>
+        <tr class="bg-info text-light text-center">
+            <th scope="row" colspan="2">{{ship.name}}</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <th scope="row">Model </th>
+            <td>{{ship.model}} </td>
+
+        </tr>
+        <tr>
+            <th scope="row">Manufacturer</th>
+            <td>{{ship.manufacturer}}</td>
+
+        </tr>
+        <tr>
+            <th scope="row">Length</th>
+            <td>{{ship.length}} mts</td>
+
+        </tr>
+        <tr>
+            <th scope="row">Consumables</th>
+            <td>{{ship.consumables}}</td>
+
+        </tr>
+        <tr>
+            <th scope="row">Starship Class </th>
+            <td>{{ship.starship_class}}</td>
+
+        </tr>
+
+    </tbody>
+</table>

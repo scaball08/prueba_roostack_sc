@@ -1,0 +1,58 @@
+<h1 class="text-info text-center">Look up the Planet by Terrain</h1>
+
+<label for="example-number-input" class="text row-form-label">
+    Type Terrain of Planet:
+   </label>
+<form #templateVariableName="ngForm" class="mb-3">
+    <div class="row">
+        <div class="col">
+            <div class="input-group">
+                <select [(ngModel)]="terrSelect" name="terrsel" class="form-control d-inline" (click)="mostrar = false;">
+                    <option value="" selected=true> --Select planet --</option>
+        <option *ngFor="let ter of terrains" [value]="ter">{{ter}}</option>
+      </select>
+                <span class="input-group-btn">
+              <button class="btn btn-secondary" (click)="getPlanet(terrSelect)" type="button">Search Planet</button>
+            </span>
+            </div>
+        </div>
+    </div>
+</form>
+
+<table *ngIf="planet" class="table table-striped">
+    <thead>
+        <tr class="bg-info text-light text-center">
+            <th scope="row" colspan="2">{{planet.name}}</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <th scope="row">Rotation Period </th>
+            <td>{{planet.rotation_period}} </td>
+
+        </tr>
+        <tr>
+            <th scope="row">Diameter</th>
+            <td>{{planet.diameter}}</td>
+
+        </tr>
+        <tr>
+            <th scope="row">Terrains</th>
+            <td>{{planet.terrain}} mts</td>
+
+        </tr>
+        <tr>
+            <th scope="row">Population</th>
+            <td>{{planet.population}}</td>
+
+        </tr>
+        <tr>
+            <th scope="row">Climate</th>
+            <td>{{planet.climate}}</td>
+
+        </tr>
+
+    </tbody>
+</table>

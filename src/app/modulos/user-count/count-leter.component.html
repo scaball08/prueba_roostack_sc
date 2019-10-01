@@ -1,0 +1,25 @@
+<h2>Persons List</h2>
+<button class="btn btn-info m-2" (click)="getPrsons()" type="button">Search More Persons</button>
+<hr>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>Name</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of lista; let i=index">
+            <td>{{item.name.first}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<div *ngIf="leterCount" class="jumbotron jumbotron-fluid">
+    <div class="container">
+
+        <h1 class="text-center">The letter most used in names is the: </h1>
+        <h1 class="display-4 text-center">{{leterCount.letras | uppercase}}</h1>
+    </div>
+</div>

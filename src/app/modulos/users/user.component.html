@@ -1,0 +1,42 @@
+<div class="container justify-content-center">
+
+    <div class="card bg-light">
+        <div class="card-body">
+
+            <form #forma="ngForm" *ngIf="years.length > 0">
+                <div class="form-group row">
+
+                    <div class="col-6">
+                        <label for="edad" class="col-form-label">Select Age</label>
+                        <select [(ngModel)]="edadUser" name="ages" class="form-control d-inline" (click)="mostrar = false;">
+                              <option value="" selected=true>{{mensaje}}</option>
+                  <option *ngFor="let edad of years" [value]="edad">{{edad}}</option>
+                </select>
+                    </div>
+                </div>
+            </form>
+
+            <button type="button" (click)="getUser(edadUser)" class="btn btn-info">Search User</button>
+
+
+        </div>
+
+    </div>
+
+    <div *ngIf="(mostrar)" class="card mb-3 mt-3" style="max-width: 500px;">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img [src]="usuario.picture.large" class="card-img h-100" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{usuario.name.first}} {{usuario.name.last}} </h5>
+                    <p class="card-text">Email : {{usuario.email}}</p>
+                    <p class="card-text">Edad: {{usuario.dob.age}} </p>
+                    <p class="card-text"><small class="text-muted">Birthdate : {{usuario.dob.date | date}}</small></p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

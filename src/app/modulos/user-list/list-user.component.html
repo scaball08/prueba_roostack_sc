@@ -1,0 +1,19 @@
+<h2>User List</h2>
+<hr>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>Frist Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of lista; let i=index">
+            <td>{{item.name.first}}</td>
+            <td>{{item.name.last}}</td>
+            <td>{{item.email}}</td>
+        </tr>
+    </tbody>
+</table>

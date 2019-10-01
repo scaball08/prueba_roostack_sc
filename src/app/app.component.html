@@ -1,0 +1,71 @@
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+        <div id="dismiss">
+            <i class="fas fa-arrow-left"></i>
+        </div>
+
+        <div class="sidebar-header">
+            <h3>Test</h3>
+        </div>
+
+        <ul class="list-unstyled components">
+            <p>Functions List </p>
+            <li class="active">
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">RandomUser</a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li>
+                        <a routerLink="/userlist">People List</a>
+                    </li>
+                    <li>
+                        <a routerLink="/userold">User Age</a>
+                    </li>
+                    <li>
+                        <a routerLink="/counts">Count concurrence</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="active">
+
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">SWapi</a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li>
+                        <a routerLink="/ships">Faster ship</a>
+                    </li>
+                    <li>
+                        <a routerLink="/terrain">Terrain</a>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+                <button type="button" id="sidebarCollapse" class="btn btn-info">
+                  <i class="fas fa-align-left"></i>
+                  <span>MENU</span>
+              </button>
+                <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fas fa-align-justify"></i>
+              </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                </div>
+            </div>
+        </nav>
+
+        <div id="routes">
+            <router-outlet>
+            </router-outlet>
+        </div>
+
+    </div>
+</div>
